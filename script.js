@@ -8,13 +8,12 @@ const handleNav = () => {
 	nav.classList.toggle('nav__active');
 	document.body.classList.toggle('overflow-hidden');
 };
-
-const burgerAnimation = () => {
+function burgerAnimation() {
 	const burgerBar = document.querySelectorAll('.nav__burger-bar');
 	burgerBar[0].classList.toggle('nav__burger-bar--rotate-first');
 	burgerBar[1].classList.toggle('nav__burger-bar--hide');
 	burgerBar[2].classList.toggle('nav__burger-bar--rotate-second');
-};
+}
 
 const menuLinkAnimation = () => {
 	navItems.forEach((navItem) => {
