@@ -1,5 +1,6 @@
 const nav = document.querySelector('.nav__list');
 const burgerBtn = document.querySelector('.nav__burger-btn');
+const navItems = document.querySelectorAll('.nav__item');
 
 const handleNav = () => {
 	burgerAnimation();
@@ -16,9 +17,21 @@ const burgerAnimation = () => {
 };
 
 const menuLinkAnimation = () => {
-	const navItems = document.querySelectorAll('.nav__item');
 	navItems.forEach((navItem) => {
 		navItem.classList.toggle('nav__active');
 	});
 };
+
+const hideMenu = () => {
+	navItems.forEach((navItem) => {
+		navItem.classList.toggle('nav__active');
+	});
+	document.body.classList.remove('overflow-hidden');
+	nav.classList.toggle('nav__active');
+	burgerAnimation();
+};
+
 burgerBtn.addEventListener('click', handleNav);
+navItems.forEach((el) => {
+	el.addEventListener('click', hideMenu);
+});
