@@ -1,29 +1,17 @@
+const nav = document.querySelector('.nav__list');
 const burgerBtn = document.querySelector('.nav__burger-btn');
-const burgerBars = document.querySelectorAll('.nav__burger-bar');
-const mobileMenu = document.querySelector('.nav__list')
-const navItems = document.querySelectorAll('.nav__item')
-const navLinks = document.querySelectorAll('.nav__link')
 
-const burgerBarsToggle = ()=> {
-  burgerBars[1].classList.toggle('nav__burger-bar--hide')
-  burgerBars[0].classList.toggle('nav__burger-bar--rotate-first')
-  burgerBars[2].classList.toggle('nav__burger-bar--rotate-second')
-}
+const handleNav = () => {
+	const navItems = document.querySelectorAll('.nav__item');
+	const burgerBar = document.querySelectorAll('.nav__burger-bar');
+	burgerBar[0].classList.toggle('nav__burger-bar--rotate-first');
+	burgerBar[1].classList.toggle('nav__burger-bar--hide');
+	burgerBar[2].classList.toggle('nav__burger-bar--rotate-second');
+	nav.classList.toggle('nav__active');
+	document.body.classList.toggle('overflow-hidden');
+	navItems.forEach((navItem) => {
+		navItem.classList.add('nav__active');
+	});
+};
 
-const mobileNavToggle = ()=> {
-  burgerBarsToggle();
-  mobileMenu.classList.toggle('nav__active');
-  navItems.forEach((el)=> {
-    el.classList.toggle('nav__active');
-  })
-  navLinks.forEach((e)=> {
-    e.addEventListener('click', function() {
-      mobileMenu.classList.remove('nav__active')
-      navItems.forEach((el)=> {
-        el.classList.remove('nav__active');
-      })
-    })
-  })
-}
-
-burgerBtn.addEventListener('click', mobileNavToggle)
+burgerBtn.addEventListener('click', handleNav);
