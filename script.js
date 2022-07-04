@@ -1,8 +1,14 @@
 const nav = document.querySelector('.nav__list');
-const burgerBtn = document.querySelector('.nav__burger-btn');
-const navItems = document.querySelectorAll('.nav__item');
+const navItems = document.querySelectorAll('.nav__item')
+const burgerBtn = document.querySelector('.nav__burger-btn')
+const counterContainer = document.querySelector('.about__counter')
 const logoContainer = document.querySelector('.clients__container')
+const clientsContainer = document.querySelector('.clients')
 const clientsLogos = document.querySelectorAll('.clients__logo')
+const options = {
+  rootMargin: '-25px'
+}
+
 
 const handleNav = () => {
   burgerAnimation();
@@ -51,11 +57,25 @@ const counter = ()=>{
     counterNum.textContent = num;}
   },70)
 }
+const startCounter= entry => {
+  if(entry[0].isIntersecting){
+    counter()
+  }
+}
+const startLogoSlider = entry => {
+  if(entry[0].isIntersecting){
+    logoSlider()
+  }
+}
 
 burgerBtn.addEventListener('click', handleNav);
 navItems.forEach((el) => {
   el.addEventListener('click', hideMenu);
 });
 
-document.addEventListener("DOMContentLoaded", logoSlider)
-document.addEventListener("DOMContentLoaded", counter)
+const observerCounter = new IntersectionObserver(startCounter, options)
+observerCounter.observe(counterContainer)
+
+const observerLogoSlider = new IntersectionObserver(startLogoSlider, options)
+observerLogoSlider.observe(logoContainer)
+
