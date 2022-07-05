@@ -206,6 +206,8 @@ body {
 .about__counter {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   height: 4rem;
   margin-bottom: 4rem;
   margin-left: 3rem;
@@ -218,6 +220,8 @@ body {
   line-height: 4rem;
   font-weight: 700;
   margin-right: 1rem;
+  width: 8.5rem;
+  text-align: right;
 }
 
 .about__counter-number::before {
@@ -225,7 +229,7 @@ body {
   position: absolute;
   top: -45%;
   right: 0;
-  width: 125%;
+  width: 8.5rem;
   height: 175%;
   border: solid 2px #d9ff00;
 }

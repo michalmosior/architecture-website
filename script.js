@@ -3,7 +3,6 @@ const navItems = document.querySelectorAll('.nav__item')
 const burgerBtn = document.querySelector('.nav__burger-btn')
 const counterContainer = document.querySelector('.about__counter')
 const logoContainer = document.querySelector('.clients__container')
-const clientsContainer = document.querySelector('.clients')
 const clientsLogos = document.querySelectorAll('.clients__logo')
 const options = {
   rootMargin: '-25px'
@@ -57,6 +56,7 @@ const counter = ()=>{
     counterNum.textContent = num;}
   },70)
 }
+
 const startCounter= entry => {
   if(entry[0].isIntersecting){
     counter()
