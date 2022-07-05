@@ -4,6 +4,8 @@ const burgerBtn = document.querySelector('.nav__burger-btn')
 const counterContainer = document.querySelector('.about__counter')
 const logoContainer = document.querySelector('.clients__container')
 const clientsLogos = document.querySelectorAll('.clients__logo')
+const projectButtons = document.querySelectorAll('.projects__button')
+const projectPictures = document.querySelectorAll('.projects__pic')
 const options = {
   rootMargin: '-25px'
 }
@@ -38,44 +40,60 @@ const hideMenu = () => {
   burgerAnimation();
 };
 
-const logoSlider = ()=>{
-clientsLogos.forEach((logo)=>{
-  logo.style.transform = "translateX(-80rem)";
-})
+const logoSlider = () => {
+  clientsLogos.forEach((logo) => {
+    logo.style.transform = "translateX(-80rem)";
+  })
 }
 
-const counter = ()=>{
+const counter = () => {
   let num
   let count
   num = 0
   const counterNum = document.querySelector('.about__counter-number')
   counterNum.textContent = num
-  count = setInterval(function(){
-    if(num<26){
-    num++
-    counterNum.textContent = num;}
-  },70)
+  count = setInterval(function() {
+    if (num < 26) {
+      num++
+      counterNum.textContent = num;
+    }
+  }, 70)
 }
 
-const startCounter= entry => {
-  if(entry[0].isIntersecting){
+const startCounter = entry => {
+  if (entry[0].isIntersecting) {
     counter()
   }
 }
 const startLogoSlider = entry => {
-  if(entry[0].isIntersecting){
+  if (entry[0].isIntersecting) {
     logoSlider()
   }
 }
+
+const changeGallery = (e) => {
+  let text =e.target.textContent.toLowerCase();
+  projectPictures.forEach((pic) => {
+    if (pic.classList.contains(text)) {
+      pic.classList.add('on-view')
+      pic.classList.remove('hidden')
+    } else{
+      pic.classList.remove('on-view')
+      pic.classList.add('hidden')
+    }
+  })
+}
+
 
 burgerBtn.addEventListener('click', handleNav);
 navItems.forEach((el) => {
   el.addEventListener('click', hideMenu);
 });
 
+projectButtons.forEach((btn) => { btn.addEventListener('click', changeGallery) })
+
 const observerCounter = new IntersectionObserver(startCounter, options)
 observerCounter.observe(counterContainer)
 
 const observerLogoSlider = new IntersectionObserver(startLogoSlider, options)
 observerLogoSlider.observe(logoContainer)
-
