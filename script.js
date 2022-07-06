@@ -72,18 +72,22 @@ const startLogoSlider = entry => {
 }
 
 const changeGallery = (e) => {
-  let text =e.target.textContent.toLowerCase();
-  projectPictures.forEach((pic) => {
-    if (pic.classList.contains(text)) {
-      pic.classList.add('on-view')
-      pic.classList.remove('hidden')
+  let text = e.target.textContent.toLowerCase();
+  projectButtons.forEach((btn)=>{
+    if(btn===e.target){
+      btn.classList.add('active__button')
     } else{
-      pic.classList.remove('on-view')
-      pic.classList.add('hidden')
+      btn.classList.remove('active__button')
+    }
+  })
+  projectPictures.forEach((picture) => {
+    if (picture.classList.contains(text)) {
+      picture.classList.replace('hidden','on-view')
+    } else {
+      picture.classList.replace('on-view','hidden')
     }
   })
 }
-
 
 burgerBtn.addEventListener('click', handleNav);
 navItems.forEach((el) => {

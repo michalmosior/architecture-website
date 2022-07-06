@@ -169,6 +169,7 @@ body {
   font-weight: 700;
   font-size: 1.4rem;
   color: #fff;
+  z-index:4;
 }
 
 /*ABOUT*/
@@ -293,7 +294,7 @@ body {
 }
 
 .projects__title {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .projects__buttons {
@@ -304,8 +305,15 @@ body {
 }
 
 .projects__button {
-  border: none;
+  font-size: 1rem;
+  padding: 1% 2%;
+  border:solid 2px transparent;
   background-color: transparent;
+  transition: border 0.3s;
+}
+
+.active__button{
+  border-bottom: solid 2px #d9ff00;
 }
 
 .projects__container {
