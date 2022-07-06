@@ -41,8 +41,9 @@ const hideMenu = () => {
 };
 
 const logoSlider = () => {
+  let width = logoContainer.clientWidth
   clientsLogos.forEach((logo) => {
-    logo.style.transform = "translateX(-80rem)";
+    logo.style.transform = `translateX(-${width}px)`;
   })
 }
 

@@ -487,12 +487,14 @@ body {
 }
 
 .clients__logo {
-  width: 10rem;
-  height: 8rem;
-  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 6rem;
   transition: transform linear 20s;
 }
-
-.clients__logo:nth-child(odd) {
-  background-color: #444;
+.clients__logo-img{
+  width: 80%;
+  object-fit: cover;
 }
