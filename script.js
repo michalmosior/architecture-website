@@ -10,15 +10,13 @@ const options = {
   rootMargin: '-25px'
 }
 
-
 const handleNav = () => {
   burgerAnimation();
   menuLinkAnimation();
   nav.classList.toggle('nav__active');
   document.body.classList.toggle('overflow-hidden');
 };
-
-function burgerAnimation() {
+const burgerAnimation = () => {
   const burgerBar = document.querySelectorAll('.nav__burger-bar');
   burgerBar[0].classList.toggle('nav__burger-bar--rotate-first');
   burgerBar[1].classList.toggle('nav__burger-bar--hide');
@@ -40,12 +38,44 @@ const hideMenu = () => {
   burgerAnimation();
 };
 
-const logoSlider = () => {
-  let width = logoContainer.clientWidth
-  clientsLogos.forEach((logo) => {
-    logo.style.transform = `translateX(-${width}px)`;
-  })
+const createLogoSlider = () => {
+  let logoArr = ['logo1', 'logo2', 'logo3', 'logo4', 'logo5', 'logo6', 'logo7', 'logo8']
+  for (let i = 0; i < logoArr.length; i++) {
+    const logoPicture = document.createElement('picture')
+    const logoImg = document.createElement('img')
+    logoPicture.classList.add('clients__logo')
+    logoContainer.append(logoPicture)
+    logoImg.classList.add('clients__logo-img')
+    logoPicture.append(logoImg)
+    logoImg.setAttribute('src', `./img/${logoArr[i]}.png`)
+  }
 }
+
+const logoSlider = () => {
+  const width = logoContainer.clientWidth
+  const logoPictures = document.querySelectorAll('.clients__logo')
+  logoPictures.forEach((logo) => {
+    logo.style.transform = `translateX(-${width}px)`
+  })
+
+
+  /*let width = logoContainer.clientWidth
+   clientsLogos.forEach((logo) => {
+     logo.style.transform = `translateX(-${width}px)`;
+   })
+   let logoInterval = setInterval(logoSliderBack, 500)*/
+}
+
+/*const logoSliderBack =()=>{
+  const logos = Array.from(clientsLogos)
+   let positionX = clientsLogos[0].getBoundingClientRect().x
+   console.log(positionX)
+   if(positionX<0){
+    let firstLogo = logos.shift()
+    console.log(firstLogo)
+    clearInterval(logoInterval)
+   }
+}*/
 
 const counter = () => {
   let num
@@ -74,18 +104,18 @@ const startLogoSlider = entry => {
 
 const changeGallery = (e) => {
   let text = e.target.textContent.toLowerCase();
-  projectButtons.forEach((btn)=>{
-    if(btn===e.target){
+  projectButtons.forEach((btn) => {
+    if (btn === e.target) {
       btn.classList.add('active__button')
-    } else{
+    } else {
       btn.classList.remove('active__button')
     }
   })
   projectPictures.forEach((picture) => {
     if (picture.classList.contains(text)) {
-      picture.classList.replace('hidden','on-view')
+      picture.classList.replace('hidden', 'on-view')
     } else {
-      picture.classList.replace('on-view','hidden')
+      picture.classList.replace('on-view', 'hidden')
     }
   })
 }
@@ -96,6 +126,8 @@ navItems.forEach((el) => {
 });
 
 projectButtons.forEach((btn) => { btn.addEventListener('click', changeGallery) })
+
+document.addEventListener('DOMContentLoaded',createLogoSlider)
 
 const observerCounter = new IntersectionObserver(startCounter, options)
 observerCounter.observe(counterContainer)
