@@ -10,6 +10,9 @@ const options = {
   rootMargin: '-25px'
 }
 
+
+
+
 const handleNav = () => {
   burgerAnimation();
   menuLinkAnimation();
@@ -38,45 +41,6 @@ const hideMenu = () => {
   burgerAnimation();
 };
 
-const createLogoSlider = () => {
-  let logoArr = ['logo1', 'logo2', 'logo3', 'logo4', 'logo5', 'logo6', 'logo7', 'logo8']
-  for (let i = 0; i < logoArr.length; i++) {
-    const logoPicture = document.createElement('picture')
-    const logoImg = document.createElement('img')
-    logoPicture.classList.add('clients__logo')
-    logoContainer.append(logoPicture)
-    logoImg.classList.add('clients__logo-img')
-    logoPicture.append(logoImg)
-    logoImg.setAttribute('src', `./img/${logoArr[i]}.png`)
-  }
-}
-
-const logoSlider = () => {
-  const width = logoContainer.clientWidth
-  const logoPictures = document.querySelectorAll('.clients__logo')
-  logoPictures.forEach((logo) => {
-    logo.style.transform = `translateX(-${width}px)`
-  })
-
-
-  /*let width = logoContainer.clientWidth
-   clientsLogos.forEach((logo) => {
-     logo.style.transform = `translateX(-${width}px)`;
-   })
-   let logoInterval = setInterval(logoSliderBack, 500)*/
-}
-
-/*const logoSliderBack =()=>{
-  const logos = Array.from(clientsLogos)
-   let positionX = clientsLogos[0].getBoundingClientRect().x
-   console.log(positionX)
-   if(positionX<0){
-    let firstLogo = logos.shift()
-    console.log(firstLogo)
-    clearInterval(logoInterval)
-   }
-}*/
-
 const counter = () => {
   let num
   let count
@@ -98,10 +62,9 @@ const startCounter = entry => {
 }
 const startLogoSlider = entry => {
   if (entry[0].isIntersecting) {
-    logoSlider()
+    logoContainer.classList.add('slider-animation')
   }
 }
-
 const changeGallery = (e) => {
   let text = e.target.textContent.toLowerCase();
   projectButtons.forEach((btn) => {
@@ -125,12 +88,12 @@ navItems.forEach((el) => {
   el.addEventListener('click', hideMenu);
 });
 
-projectButtons.forEach((btn) => { btn.addEventListener('click', changeGallery) })
-
-document.addEventListener('DOMContentLoaded',createLogoSlider)
+projectButtons.forEach((btn) => { btn.addEventListener('click', changeGallery) });
 
 const observerCounter = new IntersectionObserver(startCounter, options)
+
 observerCounter.observe(counterContainer)
 
 const observerLogoSlider = new IntersectionObserver(startLogoSlider, options)
+
 observerLogoSlider.observe(logoContainer)
