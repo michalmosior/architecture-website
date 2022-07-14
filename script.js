@@ -6,6 +6,9 @@ const logoContainer = document.querySelector('.clients__container')
 const clientsLogos = document.querySelectorAll('.clients__logo')
 const projectButtons = document.querySelectorAll('.projects__button')
 const projectPictures = document.querySelectorAll('.projects__pic')
+const opinionContents = document.querySelectorAll('.opinion__content')
+const opinionPrevButton = document.querySelector('.fa-chevron-left')
+const opinionNextButton = document.querySelector('.fa-chevron-right')
 const options = {
   rootMargin: '-25px'
 }
@@ -83,12 +86,53 @@ const changeGallery = (e) => {
   })
 }
 
+const nextOpinion = () => {
+  if (opinionContents[0].classList.contains('on-view')) {
+    opinionContents[0].classList.replace('on-view', 'hidden')
+    opinionContents[1].classList.replace('on-view', 'hidden')
+    opinionContents[2].classList.replace('hidden', 'on-view')
+    opinionContents[3].classList.replace('hidden', 'on-view')
+  } else if (opinionContents[3].classList.contains('on-view')) {
+    opinionContents[2].classList.replace('on-view', 'hidden')
+    opinionContents[3].classList.replace('on-view', 'hidden')
+    opinionContents[4].classList.replace('hidden', 'on-view')
+    opinionContents[5].classList.replace('hidden', 'on-view')
+  } else {
+    opinionContents[4].classList.replace('on-view', 'hidden')
+    opinionContents[5].classList.replace('on-view', 'hidden')
+    opinionContents[0].classList.replace('hidden', 'on-view')
+    opinionContents[1].classList.replace('hidden', 'on-view')
+  }
+}
+
+const prevOpinion = () => {
+  if (opinionContents[0].classList.contains('on-view')) {
+    opinionContents[0].classList.replace('on-view', 'hidden')
+    opinionContents[1].classList.replace('on-view', 'hidden')
+    opinionContents[4].classList.replace('hidden', 'on-view')
+    opinionContents[5].classList.replace('hidden', 'on-view')
+  } else if (opinionContents[4].classList.contains('on-view')) {
+    opinionContents[4].classList.replace('on-view', 'hidden')
+    opinionContents[5].classList.replace('on-view', 'hidden')
+    opinionContents[2].classList.replace('hidden', 'on-view')
+    opinionContents[3].classList.replace('hidden', 'on-view')
+  } else {
+    opinionContents[2].classList.replace('on-view', 'hidden')
+    opinionContents[3].classList.replace('on-view', 'hidden')
+    opinionContents[0].classList.replace('hidden', 'on-view')
+    opinionContents[1].classList.replace('hidden', 'on-view')
+  }
+}
+
 burgerBtn.addEventListener('click', handleNav);
 navItems.forEach((el) => {
   el.addEventListener('click', hideMenu);
 });
 
 projectButtons.forEach((btn) => { btn.addEventListener('click', changeGallery) });
+
+opinionNextButton.addEventListener('click', nextOpinion)
+opinionPrevButton.addEventListener('click', prevOpinion)
 
 const observerCounter = new IntersectionObserver(startCounter, options)
 
