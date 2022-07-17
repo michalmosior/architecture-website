@@ -13,6 +13,7 @@ const options = {
 	rootMargin: '-25px',
 };
 let index = 0;
+let count;
 
 const handleNav = () => {
 	burgerAnimation();
@@ -44,7 +45,6 @@ const hideMenu = () => {
 
 const counter = () => {
 	let num;
-
 	num = 0;
 	const counterNum = document.querySelector('.about__counter-number');
 	counterNum.textContent = num;
@@ -58,6 +58,7 @@ const counter = () => {
 
 const startCounter = (entry) => {
 	if (entry[0].isIntersecting) {
+		clearInterval(count);
 		counter();
 	}
 };
