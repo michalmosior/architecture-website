@@ -9,6 +9,7 @@ const projectPictures = document.querySelectorAll('.projects__pic');
 const opinionContents = document.querySelectorAll('.opinion__content');
 const opinionPrevButton = document.querySelector('.fa-chevron-left');
 const opinionNextButton = document.querySelector('.fa-chevron-right');
+const accordionBtns = document.querySelectorAll(".accordion__button")
 const options = {
 	rootMargin: '-25px',
 };
@@ -127,6 +128,18 @@ projectButtons.forEach((btn) => {
 });
 opinionNextButton.addEventListener('click', nextOpinion);
 opinionPrevButton.addEventListener('click', prevOpinion);
+
+
+const showPanel = function() {
+  const accordionPanel = this.nextElementSibling;
+  this.firstElementChild.classList.toggle('rotate')
+  accordionPanel.classList.toggle('show')
+  accordionPanel.firstElementChild.classList.toggle('show-txt')
+}
+
+accordionBtns.forEach((el) => {
+    el.addEventListener('click', showPanel);
+});
 
 const observerCounter = new IntersectionObserver(startCounter, options);
 
