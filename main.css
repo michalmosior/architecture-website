@@ -607,6 +607,7 @@ body {
 
 	.projects__link {
 		font-size: 1rem;
+		cursor: pointer;
 	}
 }
 
@@ -657,7 +658,7 @@ body {
 		grid-row-gap: 0px;
 	}
 
-	projects__pic--one {
+	.projects__pic--one {
 		grid-area: 1 / 1 / 2 / 2;
 	}
 
@@ -747,6 +748,7 @@ body {
 .opinion__content:nth-of-type(3) {
 	margin-bottom: 3rem;
 }
+
 .opinion__content::before {
 	content: '';
 	position: absolute;
@@ -803,6 +805,7 @@ body {
 .fa-chevron-left {
 	font-size: 1.8rem;
 	color: var(--accentColor);
+	cursor: pointer;
 }
 
 .clients {
@@ -913,7 +916,9 @@ body {
 	.opinion__content--second {
 		grid-area: 1 / 2 / 2 / 3;
 	}
-
+	.opinion__content:nth-of-type(3) {
+		margin-bottom: 6rem;
+	}
 	.opinion__content:nth-of-type(even) {
 		margin-bottom: 6rem;
 	}
