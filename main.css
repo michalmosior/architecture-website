@@ -569,11 +569,11 @@ body {
 .projects__link {
 	font-size: 0.6rem;
 	grid-column: 1/1;
-	grid-row: 3/3;
+	grid-row: 1/4;
 	text-decoration: none;
 	color: var(--white);
 	padding-left: 0.65rem;
-	align-self: center;
+	padding-top: 125%;
 	z-index: 2;
 }
 
