@@ -31,6 +31,17 @@ body {
 }
 
 /*NAV*/
+.nav{
+  display: flex;
+  flex-direction: row;
+}
+.nav__logo{
+  width:10%;
+  margin-left:10%;
+}
+.nav__logo-img{
+  width: 100%;
+}
 .nav__list {
   position: fixed;
   top: 0;
@@ -167,6 +178,7 @@ body {
   position: relative;
   color: var(--white);
   padding-bottom: 0;
+  margin-left: 10%;
   margin-bottom: 0;
   width: 300px;
   z-index: -2;
@@ -535,7 +547,7 @@ body {
 }
 
 .projects__name {
-  font-size: 1rem;
+  font-size: 0.8rem;
   grid-column: 1/1;
   grid-row: 2/2;
   font-weight: 700;
@@ -546,7 +558,7 @@ body {
 }
 
 .projects__link {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   grid-column: 1/1;
   grid-row: 3/3;
   text-decoration: none;
