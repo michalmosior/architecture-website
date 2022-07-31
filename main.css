@@ -191,7 +191,11 @@ body {
 	width: 52%;
 	height: 150%;
 	content: '';
-	border: solid 3px var(--accentColor);
+	background-image: url('img/ourcompanylogo.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -2;
 }
 
 .hero__title {
@@ -422,6 +426,7 @@ body {
 	.about__counter {
 		width: 100%;
 		margin-right: 0;
+		justify-content: center;
 	}
 
 	.about__counter-number {
@@ -484,14 +489,19 @@ body {
 
 .projects__button {
 	font-size: 1rem;
+	font-weight: 700;
 	padding: 1% 2%;
-	border: solid 2px transparent;
+	border: solid 3px transparent;
 	background-color: transparent;
-	transition: border 0.3s;
+	transition: border 0.3s, color 0.3s;
+	cursor: pointer;
 }
-
+.projects__button:hover {
+	border-bottom: solid 3px var(--accentColor);
+	color: var(--accentColor);
+}
 .active__button {
-	border-bottom: solid 2px var(--accentColor);
+	border-bottom: solid 3px var(--accentColor);
 }
 
 .projects__container {
@@ -720,7 +730,6 @@ body {
 	padding: 1rem;
 	padding-top: 5rem;
 	border-radius: 10px;
-	margin-bottom: 1rem;
 	transition: opacity 1.2s, transform 0.8s;
 	-webkit-box-shadow: 3px 4px 25px -7px rgba(66, 68, 90, 1);
 	-moz-box-shadow: 3px 4px 25px -7px rgba(66, 68, 90, 1);
@@ -735,7 +744,9 @@ body {
 .opinion__content:nth-of-type(even) {
 	margin-bottom: 1rem;
 }
-
+.opinion__content:nth-of-type(3) {
+	margin-bottom: 3rem;
+}
 .opinion__content::before {
 	content: '';
 	position: absolute;
