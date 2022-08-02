@@ -42,7 +42,7 @@ body {
 }
 
 .nav__logo-img {
-  width: 100%;
+  width: 70%;
 }
 
 .nav__list {
@@ -68,13 +68,19 @@ body {
   font-size: 1.4rem;
   z-index: 3;
 }
-
+.nav__logo-img{
+  width: 30%;
+  margin:0 auto;
+}
 .nav__item {
   transform: translateX(-1000px);
   z-index: 3;
 }
 
 .nav__item--one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: transform 0.5s;
 }
 
@@ -88,6 +94,9 @@ body {
 
 .nav__item--four {
   transition: transform 0.8s;
+}
+.nav__item--five{
+  transition: transform 0.9s
 }
 
 .nav__burger-btn {
@@ -133,14 +142,34 @@ body {
     display: none;
   }
 
+  .nav {
+    position:fixed;
+    height: 8vh;
+    background-color: rgba(68, 72, 73, 0.95);
+    z-index: 4;
+    width: 100%;
+  }
+  .nav__logo-img{
+    width:15%;
+    margin: 0;
+  }
   .nav__list,
   .nav__item {
     transform: translate(0);
   }
-
+  .nav__item--one{
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
   .nav__list {
+    position: static;
     flex-direction: row;
+    justify-content: space-between;
     height: 8vh;
+    width:100%;
+    max-width: 1200px;
+    background-color: transparent;
+    margin:0 auto;
   }
 
   .nav__link {
@@ -590,7 +619,7 @@ body {
 
 .projects__link:hover~.projects__img {
   transform: scale(1.2) rotate(7deg);
-  filter:none;
+  filter: none;
 }
 
 .on-view {
@@ -981,6 +1010,7 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 1em;
+  font-weight: 700;
   width: 100%;
   padding: 2% 5%;
   border: none;
