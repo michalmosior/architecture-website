@@ -361,7 +361,6 @@ body {
 	color: var(--lightGreen);
 	font-size: 8rem;
 	z-index: -1;
-	/*text-shadow: 3px 3px 2px rgba(66, 68, 90, 1);*/
 }
 
 .fa-people-group {
@@ -553,7 +552,12 @@ body {
 		flex-direction: row;
 		justify-content: space-between;
 	}
-
+	.about {
+		padding-bottom: 0;
+	}
+	.wrapper {
+		padding-bottom: 0;
+	}
 	.about__name {
 		font-size: 1.8rem;
 		width: 100%;
@@ -574,6 +578,7 @@ body {
 		flex-direction: row;
 		justify-content: flex-start;
 		align-items: flex-start;
+		margin-top: 8rem;
 		padding-left: 0;
 	}
 
