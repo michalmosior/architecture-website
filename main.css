@@ -476,6 +476,7 @@ body {
 	font-weight: 700;
 	width: 90%;
 	color: #fff;
+	padding-top: 20%;
 	padding-left: 0.65rem;
 	text-shadow: 3px 3px 2px rgba(66, 68, 90, 1);
 	z-index: 2;
@@ -494,10 +495,8 @@ body {
 }
 
 .about-team__link:hover ~ .about-team__img {
-	transform: scale(1.2) rotate(7deg);
 	filter: none;
 }
-
 @media (min-width: 500px) {
 	.about__name {
 		font-size: 1.6rem;
@@ -746,7 +745,6 @@ body {
 }
 
 .projects__link:hover ~ .projects__img {
-	transform: scale(1.2) rotate(7deg);
 	filter: none;
 }
 
@@ -817,11 +815,16 @@ body {
 	.projects__header {
 		flex-direction: row;
 	}
-
+	.projects__name {
+		padding-top: 15%;
+		font-size: 1.4rem;
+	}
 	.projects__title {
 		width: 60%;
 	}
-
+	.projects__link {
+		font-size: 1.2rem;
+	}
 	.projects__buttons {
 		justify-content: flex-end;
 	}
