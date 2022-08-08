@@ -1007,12 +1007,9 @@ body {
 
 .clients {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  height: 7.5rem;
+  height: 9rem;
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
@@ -1045,8 +1042,8 @@ body {
   width: calc(6rem * 16);
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: flex-start;
-  height: 7rem;
+  align-items: center;
+  height: 8.5rem;
 }
 
 .slider-animation {
@@ -1185,12 +1182,12 @@ body {
   }
 
   .clients {
-    height: 10.5rem;
+    height: 15.5rem;
   }
 
   .clients__container {
     width: calc(12rem * 16);
-    height: 10rem;
+    height: 15rem;
   }
 
   .clients__logo {
