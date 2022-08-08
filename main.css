@@ -311,7 +311,7 @@ body {
 .about {
 	padding: 1rem;
 	padding-top: 8rem;
-	padding-bottom: 6rem;
+	padding-bottom: 2rem;
 }
 
 .about__name {
@@ -995,12 +995,15 @@ body {
 
 .clients {
 	position: relative;
-	margin: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	height: 7.5rem;
 	max-width: 1200px;
-	margin: 0 auto;
+	margin-left:1rem;
+	margin-right: 1rem;
 	overflow: hidden;
 }
 
@@ -1263,6 +1266,7 @@ body {
 }
 
 .footer__wrapper {
+  position:relative;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -1272,6 +1276,10 @@ body {
 }
 
 .footer__logo {
+  position:absolute;
+  top:-50%;
+  left:50vw;
+  transform:translateX(-75%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -1286,7 +1294,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
-	width: 80%;
+	width: 100%;
 }
 .footer__content-left {
 	justify-self: center;
@@ -1295,10 +1303,10 @@ body {
 .footer__menu-list {
 	display: flex;
 	flex-direction: column;
-	align-items: space-between;
-	justify-content: space-evenly;
+	align-items: center;
+	justify-content: center;
 	font-size: 0.8rem;
-	padding-top: 0.5rem;
+	margin-top:1rem;
 	padding-bottom: 0.5rem;
 	width: 30%;
 }
@@ -1324,7 +1332,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-start;
 	font-size: 1rem;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
@@ -1334,6 +1342,7 @@ body {
 .fa-brands {
 	color: var(--darkGray);
 	transition: color 0.3s;
+	margin-right:3rem;
 }
 .fa-brands:hover {
 	color: var(--accentColor);
