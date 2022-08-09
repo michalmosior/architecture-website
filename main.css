@@ -1289,7 +1289,11 @@ body {
     height: 6em;
   }
 }
-
+@media(min-width:768px){
+  .faq{
+    padding-bottom:6rem;
+  }
+}
 .footer {
   padding: 1rem;
   padding-bottom: 2rem;
@@ -1409,11 +1413,13 @@ body {
   background-color: var(--accentColor);
   border: solid 1px var(--accentColor);
   color: var(--lightGray);
-  transition: background-color 0.3s, border 0.3s;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+  cursor: pointer;
 }
 .footer__input-btn:hover{
   background-color: var(--lightGreen);
-  border: var(--lightGreen);
+  border: solid 1px var(--lightGreen);
+  color:var(--darkGray);
 }
 
 @media(min-width:500px) {
