@@ -12,6 +12,7 @@ const opinionNextButton = document.querySelector('.fa-chevron-right');
 const logoContainer = document.querySelector('.clients__container');
 const clientsLogos = document.querySelectorAll('.clients__logo');
 const accordionBtns = document.querySelectorAll('.accordion__button');
+const inputEmailButton = document.querySelector('.footer__input-btn')
 const options = {
 	rootMargin: '-25px',
 };
@@ -181,10 +182,21 @@ const showPanel = function () {
 	accordionPanel.firstElementChild.classList.toggle('show-txt');
 };
 
+const mailValidation = ()=>{
+  const mailInput = document.querySelector('.footer__input-mail')
+  let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+  console.log(mailInput.value)
+  if(mailInput.value.match(regex)){
+    console.log("dobrze")
+  } else{
+    console.log("chujowo")
+  }
+}
+
 accordionBtns.forEach((el) => {
 	el.addEventListener('click', showPanel);
 });
-
+inputEmailButton.addEventListener('click',mailValidation)
 const observerCounter = new IntersectionObserver(startCounter, options);
 
 observerCounter.observe(counterContainer);
