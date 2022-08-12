@@ -154,7 +154,7 @@ body {
   }
 
   .nav__logo-img {
-    width: 70%;
+    width: 15%;
     margin: 0;
   }
 
@@ -185,11 +185,16 @@ body {
     border-bottom: solid 3px transparent;
     transition: background-color 0.3s, border 0.3s;
   }
-
-  .nav__item:hover {
+   .nav__item:hover {
     background-color: var(--black); border-bottom:solid 3px var(--lightGreen);
   }
 
+  .nav__item--one:hover{
+     background-color: none;
+     border-bottom:solid 3px transparent;
+  }
+  
+ 
   .nav__item--one {
     align-items: flex-start;
     justify-content: flex-start;
