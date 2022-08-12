@@ -334,10 +334,10 @@
           </li>
         </ul>
         <div class="footer__content-left">
-          <div class="footer__input">
-            <input class="footer__input-mail" type="e-mail" placeholder="Join to us newsletter">
-            <button class="footer__input-btn">Send</button>
-          </div>
+          <form class="footer__input" action="mail.php">
+            <input class="footer__input-mail" type="email" name="email" placeholder="Join to us newsletter" required>
+            <button class="footer__input-btn" type="submit">Send</button>
+          </form>
           <div class="footer__socials">
             <a href="#" class="footer__socials-link"><i class="fa-brands fa-square-facebook"></i></a>
             <a href="#" class="footer__socials-link"><i class="fa-brands fa-square-instagram"></i></a>
