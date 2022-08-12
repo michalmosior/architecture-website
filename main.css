@@ -181,7 +181,7 @@ body {
     display: flex;
     justify-content: center;
     height: 100%;
-    width: 15%;
+    width: 20%;
     border-bottom: solid 3px transparent;
     transition: background-color 0.3s, border 0.3s;
   }
@@ -213,7 +213,11 @@ body {
     margin-right: 0;
   }
 }
-
+@media(min-width: 1024px){
+  .nav__list-item{
+    width: 15%;
+  }
+}
 @media(min-width:1240px) {
   .nav__list {
     padding-left: 0;
