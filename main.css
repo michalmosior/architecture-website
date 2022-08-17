@@ -84,6 +84,7 @@ body {
   justify-content: center;
   align-items: center;
   transition: transform 0.5s;
+  width: 50%;
 }
 
 .nav__item--two {
@@ -185,16 +186,19 @@ body {
     border-bottom: solid 3px transparent;
     transition: background-color 0.3s, border 0.3s;
   }
-   .nav__item:hover {
-    background-color: var(--black); border-bottom:solid 3px var(--lightGreen);
+
+  .nav__desktop-active,
+  .nav__item:hover {
+    background-color: var(--black);
+    border-bottom: solid 3px var(--lightGreen);
   }
 
-  .nav__item--one:hover{
-     background-color: none;
-     border-bottom:solid 3px transparent;
+  .nav__item--one:hover {
+    background-color: none;
+    border-bottom: solid 3px transparent;
   }
-  
- 
+
+
   .nav__item--one {
     align-items: flex-start;
     justify-content: flex-start;
@@ -213,11 +217,13 @@ body {
     margin-right: 0;
   }
 }
-@media(min-width: 1024px){
-  .nav__list-item{
+
+@media(min-width: 1024px) {
+  .nav__list-item {
     width: 15%;
   }
 }
+
 @media(min-width:1240px) {
   .nav__list {
     padding-left: 0;
@@ -250,6 +256,7 @@ body {
   background-size: cover;
   background-position: center center;
   background-image: url('img/hero.jpg');
+  background-attachment: fixed;
   filter: brightness(85%);
   z-index: -2;
 }
