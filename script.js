@@ -212,7 +212,6 @@ const observerLogoSlider = new IntersectionObserver(startLogoSlider, options);
 observerLogoSlider.observe(logoContainer);
 
 const scrollSpy = (entries) => {
-
   for (const entry of entries) {
     if (entry.isIntersecting) {
       for (let i = 0; i < navItems.length; i++) {
