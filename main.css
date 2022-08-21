@@ -658,9 +658,6 @@ body {
 	.wrapper {
 		display: grid;
 		grid-template-columns: 70% 30%;
-		/*flex-direction: row;
-    justify-content: space-between;
-    align-items: center;*/
 	}
 
 	.about__description-wrapper {
