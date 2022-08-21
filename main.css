@@ -31,7 +31,7 @@ body {
 }
 
 .section-padding {
-	padding: 4rem 1rem 4rem 1rem;
+	padding: 5.5rem 1rem 5rem 1rem;
 }
 
 /*NAV*/
@@ -592,6 +592,7 @@ body {
 
 .about-team__link:hover ~ .about-team__img {
 	filter: none;
+	transform: scale(1.05);
 }
 
 @media (min-width: 500px) {
@@ -947,6 +948,7 @@ body {
 
 .projects__link:hover ~ .projects__img {
 	filter: none;
+	transform: scale(1.05);
 }
 
 .on-view {
@@ -1197,7 +1199,12 @@ body {
 .fa-chevron-left {
 	font-size: 1.8rem;
 	color: var(--accentColor);
+	transition: color 0.3s;
 	cursor: pointer;
+}
+.fa-chevron-right:hover,
+.fa-chevron-left:hover {
+	color: var(--lightGreen);
 }
 
 .clients {
@@ -1426,12 +1433,19 @@ body {
 	border-bottom: solid 2px var(--accentColor);
 	background-color: transparent;
 	color: var(--accentColor);
+	transition: color 0.3s, border-bottom 0.3s;
 	cursor: pointer;
 }
-
+.accordion__button:hover {
+	color: var(--lightGreen);
+	border-bottom: solid 2px var(--lightGreen);
+}
+.accordion__button:hover > .fa-chevron-down {
+	color: var(--lightGreen);
+}
 .fa-chevron-down {
 	font-size: 1.8em;
-	transition: transform 0.3s;
+	transition: transform 0.3s, color 0.3s;
 	color: var(--accentColor);
 	cursor: pointer;
 }
