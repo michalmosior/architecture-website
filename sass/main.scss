@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+	--black: #1c1c1c;
+	--lightGray: #ddd;
+	--darkGray: #555;
+	--white: #f2f3f4;
+	--accentColor: #32612d;
+	--lightGreen: rgb(85, 204, 85);
+}
+
+body {
+	position: relative;
+	background-color: rgb(250, 246, 246);
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.section-padding {
+	padding: 5.5rem 1rem 5rem 1rem;
+}
+@import '_header.scss';
+@import '_nav.scss';
+@import '_about.scss';
