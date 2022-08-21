@@ -18,7 +18,7 @@ const options = {
   rootMargin: '-25px',
 };
 const scrollSpyOptions ={
-  rootMargin:'0px'
+  rootMargin:'-60px'
 }
 let index = 0;
 let countOne;
