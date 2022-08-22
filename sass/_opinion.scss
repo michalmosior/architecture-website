@@ -72,7 +72,7 @@
       width: 6rem;
       height: 6rem;
       border-radius: 50%;
-      background-image: url('img/opinion1.jpg');
+      background-image: url('../img/opinion1.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       -webkit-box-shadow: 3px 4px 25px -7px rgba(66, 68, 90, 1);
@@ -81,23 +81,23 @@
     }
 
     &:nth-of-type(2)::before {
-      background-image: url('img/opinion2.jpg');
+      background-image: url('../img/opinion2.jpg');
     }
 
     &:nth-of-type(3)::before {
-      background-image: url('img/opinion3.jpg');
+      background-image: url('../img/opinion3.jpg');
     }
 
     &:nth-of-type(4)::before {
-      background-image: url('img/opinion4.jpg');
+      background-image: url('../img/opinion4.jpg');
     }
 
     &:nth-of-type(5)::before {
-      background-image: url('img/opinion5.jpg');
+      background-image: url('../img/opinion5.jpg');
     }
 
     &:nth-of-type(6)::before {
-      background-image: url('img/opinion6.jpg');
+      background-image: url('../img/opinion6.jpg');
     }
 
     &::after {
