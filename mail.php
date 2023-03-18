@@ -17,7 +17,7 @@ $mail->SMTPSecure = 'tls'; /* Jeżeli ma być aktywne szyfrowanie SSL */
 $mail->SMTPAuth = true;
 $mail->IsHTML(true);
 $mail->Username = "mosweb@mosweb.pl"; /* login do skrzynki email często adres*/
-$mail->Password = "Aleksander2022"; /* Hasło do poczty */
+$mail->Password = "********"; /* Hasło do poczty */
 $mail->setFrom('mosweb@mosweb.pl', 'Mosweb'); /* adres e-mail i nazwa nadawcy */
 $mail->AddAddress("pawel@pawel.pl"); /* adres lub adresy odbiorców */
 $mail->Subject = "Testowa wiadomość SMTP"; /* Tytuł wiadomości */
