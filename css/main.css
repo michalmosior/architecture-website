@@ -319,7 +319,7 @@ body {
   -webkit-transform: rotate(-45deg) translateY(-15px) scaleX(1.15);
           transform: rotate(-45deg) translateY(-15px) scaleX(1.15);
 }
-.nav__burger__active {
+.nav__active {
   -webkit-transform: translate(0);
           transform: translate(0);
 }
